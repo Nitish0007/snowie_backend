@@ -1,0 +1,4 @@
+openai
+ollama
+python-telegram-bot
+python-dotenv
