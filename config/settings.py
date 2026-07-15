@@ -16,6 +16,9 @@ if ENV == "development":
     MODEL_NAME = os.getenv("MODEL_NAME")
     MAX_TOKENS = int(os.getenv("MAX_TOKENS"))
     TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+    NOTION_API_KEY = os.getenv("NOTION_API_KEY")
+    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+    OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # for production
 if ENV == "production":
