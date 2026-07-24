@@ -83,20 +83,5 @@ class NotionPlugin(BasePlugin):
                     "required": ["page_id"],
                 },
                 handler=self._analyze_page,
-            ),
-            Tool(
-                name="search_in_blocks",
-                description="Search for text in Notion blocks, e.g. 'find all tasks for tomorrow'.",
-                parameters={
-                    "type": "object",
-                    "properties": {
-                        "query": {
-                            "type": "string",
-                            "description": "Search text such as 'find all tasks for tomorrow'",
-                        }
-                    },
-                    "required": ["query"],
-                },
-                handler=self._search_in_blocks,
             )
         ]

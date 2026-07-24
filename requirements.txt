@@ -2,3 +2,5 @@ openai
 google-genai
 python-telegram-bot
 python-dotenv
+google-auth
+google-api-python-client

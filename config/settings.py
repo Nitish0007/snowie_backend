@@ -19,6 +19,8 @@ if ENV == "development":
     NOTION_API_KEY = os.getenv("NOTION_API_KEY")
     GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
     OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+    GOOGLE_CALENDER_ID = os.getenv("GOOGLE_CALENDER_ID")
+    
 
 # for production
 if ENV == "production":

@@ -4,7 +4,7 @@ from ai.persona.snowie.system_prompt import build as build_snowie_system_prompt
 from config.settings import MODEL_NAME, MAX_TOKENS
 
 SNOWIE_SYSTEM_PROMPT = build_snowie_system_prompt()
-MAX_ROUNDS = 5
+MAX_ROUNDS = 10
 
 class AIRouter:
     def __init__(self, plugins: list):
@@ -83,7 +83,7 @@ class AIRouter:
             {"role": "user", "content": user_text},
         ]
 
-        for _ in range(MAX_ROUNDS):
+        for round_number in range(MAX_ROUNDS):
             kwargs = {
                 "model": MODEL_NAME,
                 "messages": messages,
@@ -95,6 +95,7 @@ class AIRouter:
                 kwargs["tool_choice"] = "auto"
 
             response = ai_client.chat.completions.create(**kwargs)
+            print(f"\n\nRound {round_number} Response: {response}\n\n")
             message = response.choices[0].message
 
             if not message.tool_calls:
